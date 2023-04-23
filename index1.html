@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/js.png">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        let rub = Number(prompt(`Укажите вашу сумму в рублях:`));
+        let usd = Number(prompt(`Укажите вашу сумму в долларах:`));
+        let usdToRub = 0;
+        
+        function currencySum(dollar) {
+           usdToRub += (dollar * 75);
+           alert(`На вашем балансе ${usdToRub + rub} рублей.`);
+        }
+        currencySum(usd);
+        
+    </script>
+</body>
+
+</html>

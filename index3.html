@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/js.png">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        let ticket = prompt(`Введите шестизначное число вашего лоторейного билета. (Пример: 453657)`);
+
+        let ticketFirstNumbersSum = 0;
+        let ticketSecondNumbersSum = 0;
+
+        function isLucky(numbers) {
+            for (let i = 0; i < numbers.length; i++) {
+                if (i < numbers.length / 2) {
+                    ticketFirstNumbersSum += Number(ticket[i]);
+                } else {
+                    ticketSecondNumbersSum += Number(ticket[i]);
+                }
+            }
+            if (ticketFirstNumbersSum === ticketSecondNumbersSum) {
+                alert(`Поздравляем! Вы сорвали джекпот!!!`);
+            } else {
+                alert(`К сожалению данный билет не победил. Попробуйте другой билет...`);
+            }
+        }
+
+        if (ticket.length !== 6) {
+            alert(`Некорректное значение билета! Введите шестизначное число.`)
+        } else {
+            isLucky(ticket);
+        }
+
+    </script>
+</body>
+
+</html>
